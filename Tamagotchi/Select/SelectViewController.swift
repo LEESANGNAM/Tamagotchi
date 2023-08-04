@@ -11,28 +11,62 @@ class SelectViewController: UIViewController {
      
     @IBOutlet weak var TamagotchiSelectCollectionView: UICollectionView!
     
+    var tamagotchi: [Tamagotchi] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setData()
         setCollectionView()
-        
         self.title = "다마고치 선택하기"
-        
         // Do any additional setup after loading the view.
     }
-
+    func setData(){
+        tamagotchi = [
+            Tamagotchi(type: .ttakkeum),
+            Tamagotchi(type: .bangsil),
+            Tamagotchi(type: .banjjag),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none),
+            Tamagotchi(type: .none)
+        ]
+    }
 
 }
 
 extension SelectViewController : UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return tamagotchi.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = TamagotchiSelectCollectionView.dequeueReusableCell(withReuseIdentifier: "TamagotchiCollectionViewCell", for: indexPath) as! TamagotchiCollectionViewCell
-
+        
+        cell.TamagotchiIamageView.image = tamagotchi[indexPath.row].type.image
         
         return cell
         
