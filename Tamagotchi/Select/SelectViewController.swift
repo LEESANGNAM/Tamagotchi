@@ -87,10 +87,7 @@ extension SelectViewController : UICollectionViewDataSource, UICollectionViewDel
     }
         
     func setCollectionViewLayout(){
-            
-        
             let layout = UICollectionViewFlowLayout()
-            
             let spacing: CGFloat = 10
             // 전체 너비 가져와서 빼기
             let width = UIScreen.main.bounds.width - (spacing * 5)
