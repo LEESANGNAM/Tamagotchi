@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D67320942A7D5C1D00916497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67320932A7D5C1D00916497 /* Main.storyboard */; };
+		D67320962A7D5CA300916497 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67320952A7D5CA300916497 /* Tamagotchi.swift */; };
 		D698B6182A7D1EFF00ED3D28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698B6172A7D1EFF00ED3D28 /* AppDelegate.swift */; };
 		D698B61A2A7D1EFF00ED3D28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698B6192A7D1EFF00ED3D28 /* SceneDelegate.swift */; };
 		D698B61C2A7D1EFF00ED3D28 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698B61B2A7D1EFF00ED3D28 /* SelectViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		D67320932A7D5C1D00916497 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D67320952A7D5CA300916497 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 		D698B6142A7D1EFF00ED3D28 /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D698B6172A7D1EFF00ED3D28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D698B6192A7D1EFF00ED3D28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				D698B62C2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.swift */,
 				D698B62D2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.xib */,
 				D698B61D2A7D1EFF00ED3D28 /* Select.storyboard */,
+				D67320952A7D5CA300916497 /* Tamagotchi.swift */,
 			);
 			path = Select;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				D698B62E2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.swift in Sources */,
 				D698B6182A7D1EFF00ED3D28 /* AppDelegate.swift in Sources */,
 				D698B61A2A7D1EFF00ED3D28 /* SceneDelegate.swift in Sources */,
+				D67320962A7D5CA300916497 /* Tamagotchi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
