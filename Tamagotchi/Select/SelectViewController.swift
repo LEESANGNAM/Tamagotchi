@@ -67,7 +67,7 @@ extension SelectViewController : UICollectionViewDataSource, UICollectionViewDel
         let cell = TamagotchiSelectCollectionView.dequeueReusableCell(withReuseIdentifier: "TamagotchiCollectionViewCell", for: indexPath) as! TamagotchiCollectionViewCell
         
         cell.TamagotchiIamageView.image = tamagotchi[indexPath.row].type.image
-        
+        cell.TamagotchiNameLabel.text = tamagotchi[indexPath.row].name
         return cell
         
     }
