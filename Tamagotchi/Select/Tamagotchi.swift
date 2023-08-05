@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
-enum TamagotchiType {
+enum TamagotchiType: Int{
+    case none
     case ttakkeum
     case bangsil
     case banjjag
-    case none
+    
     
     var image: UIImage? {
         switch self {
@@ -53,6 +54,20 @@ enum TamagotchiType {
         }
     }
     
+    var key: Int {
+        switch self{
+        case .none:
+            return 0
+        case .ttakkeum:
+            return 1
+        case .bangsil:
+            return 2
+        case .banjjag:
+            return 3
+        }
+    }
+    
+    
 }
 
 
@@ -60,6 +75,9 @@ struct Tamagotchi {
     var type: TamagotchiType
     var name: String {
         return type.name
+    }
+    var key: Int{
+        return type.key
     }
     var rice = 0
     var water = 0
