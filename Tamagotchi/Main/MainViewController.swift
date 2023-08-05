@@ -10,8 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     let UserDefault = UserDefaults.standard
-    var tamagotchi = Tamagotchi(type: .ttakkeum)
-    
+    var tamagotchi: Tamagotchi?
     @IBOutlet weak var talkImageView: UIImageView!
     @IBOutlet weak var TalkLabel: UILabel!
     
@@ -32,6 +31,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpTamagotchi()
         setUpTamagotchiLabel()
         setUpButton()
@@ -42,17 +42,17 @@ class MainViewController: UIViewController {
     
     
     func setUpTamagotchi(){
-        let level = tamagotchi.getLavel()
-        let tamagotchiName = UserDefault.string(forKey: "\(tamagotchi.key)name")
+        let level = tamagotchi!.getLavel()
+        let tamagotchiName = UserDefault.string(forKey: "\(tamagotchi!.key)name")
         tamagotchiNameLabel.text = tamagotchiName
-        tamagotchiImageView.image = UIImage(named: "\(tamagotchi.key)-\(level)")
+        tamagotchiImageView.image = UIImage(named: "\(tamagotchi!.key)-\(level)")
     }
     
     func setUpTamagotchiLabel(){
-        let riceCount = UserDefault.integer(forKey: "\(tamagotchi.key)rice")
-        let waterCount = UserDefault.integer(forKey: "\(tamagotchi.key)water")
+        let riceCount = UserDefault.integer(forKey: "\(tamagotchi!.key)rice")
+        let waterCount = UserDefault.integer(forKey: "\(tamagotchi!.key)water")
         
-        tamagotchiLevelLabel.text = "LV\(tamagotchi.getLavel())"
+        tamagotchiLevelLabel.text = "LV\(tamagotchi!.getLavel())"
         tamagotchiRiceLabel.text = "밥알 \(riceCount)개"
         tamagotchiWaterLabel.text = "물방울 \(waterCount)개"
     }

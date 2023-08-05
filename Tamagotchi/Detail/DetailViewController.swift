@@ -52,6 +52,27 @@ class DetailViewController: UIViewController {
     }
     
     
+    @IBAction func selectButtonTapped(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+        
+        vc.tamagotchi = tamagotchiDetail
+        setData(tamagotchi: tamagotchiDetail!)
+        vc.modalPresentationStyle = .overFullScreen
+        
+        present(vc, animated: true)
+    }
+    
+    func setData(tamagotchi: Tamagotchi){
+        let UserDefault = UserDefaults.standard
+        
+        UserDefault.set(tamagotchi.name, forKey: "\(tamagotchi.key)name")
+        UserDefault.set(tamagotchi.rice, forKey: "\(tamagotchi.key)rice")
+        UserDefault.set(tamagotchi.water, forKey: "\(tamagotchi.key)water")
+        
+    }
+    
+    
     
 
 }

@@ -75,6 +75,9 @@
                                                 <rect key="frame" x="157.33333333333331" y="0.0" width="157" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="selectButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sFJ-hH-bXL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
