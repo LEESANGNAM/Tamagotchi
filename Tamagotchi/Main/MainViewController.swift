@@ -87,7 +87,7 @@ class MainViewController: UIViewController {
     
     @IBAction func riceButtonTapped(_ sender: UIButton) {
         var riceCount = UserDefault.integer(forKey: "\(tamagotchi!.key)rice")
-        riceCount += 1
+        riceCount += getTextFieldValue(textField: riceTextField)
         UserDefault.set(riceCount, forKey: "\(tamagotchi!.key)rice")
         
         setUpTamagotchiLabel()
@@ -97,11 +97,38 @@ class MainViewController: UIViewController {
     
     @IBAction func waterButtonTapped(_ sender: UIButton) {
         var waterCount = UserDefault.integer(forKey: "\(tamagotchi!.key)water")
-        waterCount += 1
+        waterCount += getTextFieldValue(textField: waterTextField)
         UserDefault.set(waterCount, forKey: "\(tamagotchi!.key)water")
         
         setUpTamagotchiLabel()
         setUpTamagotchi()
     }
+    
+    func getTextFieldValue(textField: UITextField) -> Int {
+        guard let text = textField.text, !text.isEmpty else { return 1 }
+        guard let num = Int(text) else {
+            print("\(text)는 숫자가 아님 alert 띄울예정")
+            textField.text = ""
+            return 0
+        }
+        let limit = textFieldLimit(textFiled: textField)
+        
+        if num >= limit {
+            print("\(limit)미만으로 입력가능 alert 띄울 예정")
+            textField.text = ""
+            return 0
+        }else{
+            return num
+        }
+    }
+    
+    func textFieldLimit(textFiled: UITextField) -> Int{
+        if textFiled == riceTextField{
+            return 100
+        }else{
+            return 50
+        }
+    }
+    
     
 }
