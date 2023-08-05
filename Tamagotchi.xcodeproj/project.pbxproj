@@ -29,6 +29,7 @@
 		D6B63E0B2A7EB169006377A1 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E0A2A7EB169006377A1 /* SettingViewController.swift */; };
 		D6B63E0E2A7EB223006377A1 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E0C2A7EB223006377A1 /* SettingTableViewCell.swift */; };
 		D6B63E0F2A7EB223006377A1 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B63E0D2A7EB223006377A1 /* SettingTableViewCell.xib */; };
+		D6B63E112A7EB58B006377A1 /* SettingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E102A7EB58B006377A1 /* SettingEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		D6B63E0A2A7EB169006377A1 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D6B63E0C2A7EB223006377A1 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		D6B63E0D2A7EB223006377A1 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		D6B63E102A7EB58B006377A1 /* SettingEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				D6B63E0C2A7EB223006377A1 /* SettingTableViewCell.swift */,
 				D6B63E0D2A7EB223006377A1 /* SettingTableViewCell.xib */,
 				D6B63E0A2A7EB169006377A1 /* SettingViewController.swift */,
+				D6B63E102A7EB58B006377A1 /* SettingEnum.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				D673209B2A7D72E300916497 /* DetailViewController.swift in Sources */,
 				D6B63E002A7E3D92006377A1 /* Extension+UILabel.swift in Sources */,
 				D67320A12A7E2AD600916497 /* Extension+UIButton.swift in Sources */,
+				D6B63E112A7EB58B006377A1 /* SettingEnum.swift in Sources */,
 				D698B61A2A7D1EFF00ED3D28 /* SceneDelegate.swift in Sources */,
 				D67320962A7D5CA300916497 /* Tamagotchi.swift in Sources */,
 				D6B63E042A7E3E8C006377A1 /* BaseColor.swift in Sources */,
