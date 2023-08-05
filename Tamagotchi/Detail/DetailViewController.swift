@@ -8,6 +8,8 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var tamagotchiDetail: Tamagotchi?
 
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var detailNameLabel: UILabel!
@@ -32,10 +34,10 @@ class DetailViewController: UIViewController {
         detailImageView.layer.cornerRadius = detailImageView.bounds.width / 2
         detailImageView.layer.masksToBounds = true
         
-        detailImageView.backgroundColor = .blue
+        detailImageView.image = tamagotchiDetail?.type.image
         
-        detailNameLabel.text = "다마고치 이름자리"
-        detailContentsLabel.text = TamagotchiType.none.contens
+        detailNameLabel.text = tamagotchiDetail?.type.name
+        detailContentsLabel.text = tamagotchiDetail?.type.contens
         
         
         cancelButton.titleLabel?.text = "취소"

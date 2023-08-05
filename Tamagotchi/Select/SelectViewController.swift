@@ -73,6 +73,17 @@ extension SelectViewController : UICollectionViewDataSource, UICollectionViewDel
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Detail", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        
+        vc.tamagotchiDetail = tamagotchi[indexPath.row]
+        vc.modalPresentationStyle = .overFullScreen
+        
+        present(vc, animated: true)
+    }
+    
+    
     
     func findCell(){
         let nib = UINib(nibName: "TamagotchiCollectionViewCell", bundle: nil)
