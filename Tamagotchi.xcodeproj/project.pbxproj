@@ -21,6 +21,9 @@
 		D698B6242A7D1F0000ED3D28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D698B6222A7D1F0000ED3D28 /* LaunchScreen.storyboard */; };
 		D698B62E2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D698B62C2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.swift */; };
 		D698B62F2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D698B62D2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.xib */; };
+		D6B63DFE2A7E3D80006377A1 /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63DFD2A7E3D80006377A1 /* Extension+UITextField.swift */; };
+		D6B63E002A7E3D92006377A1 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63DFF2A7E3D92006377A1 /* Extension+UILabel.swift */; };
+		D6B63E042A7E3E8C006377A1 /* BaseColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E032A7E3E8C006377A1 /* BaseColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		D698B6252A7D1F0000ED3D28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D698B62C2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
 		D698B62D2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TamagotchiCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6B63DFD2A7E3D80006377A1 /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
+		D6B63DFF2A7E3D92006377A1 /* Extension+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel\U0003.swift"; sourceTree = "<group>"; };
+		D6B63E032A7E3E8C006377A1 /* BaseColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				D67320A02A7E2AD600916497 /* Extension+UIButton.swift */,
+				D6B63DFD2A7E3D80006377A1 /* Extension+UITextField.swift */,
+				D6B63DFF2A7E3D92006377A1 /* Extension+UILabel.swift */,
+				D6B63E032A7E3E8C006377A1 /* BaseColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -198,13 +207,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D673209E2A7E016700916497 /* MainViewController.swift in Sources */,
+				D6B63DFE2A7E3D80006377A1 /* Extension+UITextField.swift in Sources */,
 				D698B61C2A7D1EFF00ED3D28 /* SelectViewController.swift in Sources */,
 				D698B62E2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.swift in Sources */,
 				D698B6182A7D1EFF00ED3D28 /* AppDelegate.swift in Sources */,
 				D673209B2A7D72E300916497 /* DetailViewController.swift in Sources */,
+				D6B63E002A7E3D92006377A1 /* Extension+UILabel.swift in Sources */,
 				D67320A12A7E2AD600916497 /* Extension+UIButton.swift in Sources */,
 				D698B61A2A7D1EFF00ED3D28 /* SceneDelegate.swift in Sources */,
 				D67320962A7D5CA300916497 /* Tamagotchi.swift in Sources */,
+				D6B63E042A7E3E8C006377A1 /* BaseColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

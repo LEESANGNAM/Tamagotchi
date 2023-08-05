@@ -30,7 +30,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iC1-Lg-lEK">
-                                                <rect key="frame" x="136.66666666666666" y="146" width="41.333333333333343" height="24"/>
+                                                <rect key="frame" x="94.333333333333314" y="146" width="125.66666666666669" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="Vk0-sz-bCD"/>
                                                 </constraints>
@@ -53,6 +53,7 @@
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="iC1-Lg-lEK" firstAttribute="width" secondItem="e3Y-q4-ia0" secondAttribute="width" id="9og-U8-RVW"/>
                                             <constraint firstAttribute="trailing" secondItem="Who-8C-ahc" secondAttribute="trailing" constant="20" id="Yly-Sq-TL0"/>
                                             <constraint firstItem="Who-8C-ahc" firstAttribute="leading" secondItem="qXI-UH-SGk" secondAttribute="leading" constant="20" id="gix-R0-ztR"/>
                                             <constraint firstAttribute="trailing" secondItem="zFZ-qr-fmy" secondAttribute="trailing" constant="20" id="k4x-JC-DFx"/>

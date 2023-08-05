@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     let UserDefault = UserDefaults.standard
     var tamagotchi: Tamagotchi?
     @IBOutlet weak var talkImageView: UIImageView!
-    @IBOutlet weak var TalkLabel: UILabel!
+    @IBOutlet weak var talkLabel: UILabel!
     
     @IBOutlet weak var tamagotchiImageView: UIImageView!
     @IBOutlet weak var tamagotchiNameLabel: UILabel!
@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
         let level = tamagotchi!.getLavel()
         let tamagotchiName = UserDefault.string(forKey: "\(tamagotchi!.key)name")
         tamagotchiNameLabel.text = tamagotchiName
+        tamagotchiNameLabel.setNameLabel()
         tamagotchiImageView.image = UIImage(named: "\(tamagotchi!.key)-\(level)")
     }
     
@@ -53,8 +54,12 @@ class MainViewController: UIViewController {
         let waterCount = UserDefault.integer(forKey: "\(tamagotchi!.key)water")
         
         tamagotchiLevelLabel.text = "LV\(tamagotchi!.getLavel())"
-        tamagotchiRiceLabel.text = "밥알 \(riceCount)개"
+        tamagotchiLevelLabel.setInfoLabel()
+        tamagotchiRiceLabel.text = "밥알\(riceCount)개"
+        tamagotchiRiceLabel.setInfoLabel()
         tamagotchiWaterLabel.text = "물방울 \(waterCount)개"
+        tamagotchiWaterLabel.setInfoLabel()
+        
     }
     
     func setUpButton(){
@@ -64,9 +69,8 @@ class MainViewController: UIViewController {
     
     func setUpTalk(){
         talkImageView.image = UIImage(named: "bubble")
-        TalkLabel.textAlignment = .center
-        TalkLabel.numberOfLines = 0
-        TalkLabel.text = "말풍선 대화 추가예정입니다."
+        talkLabel.text = "말풍선 대화 추가예정입니다."
+        talkLabel.setInfoLabel()
     }
     
     

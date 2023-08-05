@@ -29,7 +29,9 @@ class DetailViewController: UIViewController {
     
     func setUpUI(){
         
-        backView.backgroundColor = .gray
+        backView.backgroundColor = BaseColor.backgroundColor
+        detailNameLabel.setNameLabel()
+        detailContentsLabel.setInfoLabel()
         
         detailImageView.layer.cornerRadius = detailImageView.bounds.width / 2
         detailImageView.layer.masksToBounds = true
