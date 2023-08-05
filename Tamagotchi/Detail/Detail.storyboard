@@ -67,6 +67,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="40"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="cancelButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cYA-4M-bg1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbR-Qy-MIt">
                                                 <rect key="frame" x="157.33333333333331" y="0.0" width="157" height="40"/>

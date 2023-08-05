@@ -41,7 +41,17 @@ class DetailViewController: UIViewController {
         
         
         cancelButton.titleLabel?.text = "취소"
+        cancelButton.layer.borderWidth = 1
         selectButton.titleLabel?.text = "시작하기"
+        selectButton.layer.borderWidth = 1
     }
+    
+    
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
+    
+    
 
 }
