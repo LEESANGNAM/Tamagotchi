@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     let UserDefault = UserDefaults.standard
-    var tamagotchi: Tamagotchi?
+    var tamagotchi: Tamagotchi!
     @IBOutlet weak var talkImageView: UIImageView!
     @IBOutlet weak var talkLabel: UILabel!
     
@@ -41,18 +41,18 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func riceButtonTapped(_ sender: UIButton) {
-        var riceCount = UserDefault.integer(forKey: "\(tamagotchi!.key)rice")
+        var riceCount = UserDefault.integer(forKey: "\(tamagotchi.key)rice")
         riceCount += getTextFieldValue(textField: riceTextField)
-        UserDefault.set(riceCount, forKey: "\(tamagotchi!.key)rice")
+        UserDefault.set(riceCount, forKey: "\(tamagotchi.key)rice")
         
         setUpTamagotchiLabel()
         setUpTamagotchi()
     }
     
     @IBAction func waterButtonTapped(_ sender: UIButton) {
-        var waterCount = UserDefault.integer(forKey: "\(tamagotchi!.key)water")
+        var waterCount = UserDefault.integer(forKey: "\(tamagotchi.key)water")
         waterCount += getTextFieldValue(textField: waterTextField)
-        UserDefault.set(waterCount, forKey: "\(tamagotchi!.key)water")
+        UserDefault.set(waterCount, forKey: "\(tamagotchi.key)water")
         
         setUpTamagotchiLabel()
         setUpTamagotchi()
@@ -61,14 +61,14 @@ class MainViewController: UIViewController {
     func getTextFieldValue(textField: UITextField) -> Int {
         guard let text = textField.text, !text.isEmpty else { return 1 }
         guard let num = Int(text) else {
-            print("\(text)는 숫자가 아님 alert 띄울예정")
+            showAlert(text: "\(text)는 숫자가 아님 alert 띄울예정")
             textField.text = ""
             return 0
         }
         let limit = textFieldLimit(textFiled: textField)
         
         if num >= limit {
-            print("\(limit)미만으로 입력가능 alert 띄울 예정")
+            showAlert(text: "\(limit)미만으로 입력가능 alert 띄울 예정")
             textField.text = ""
             return 0
         }else{
@@ -89,21 +89,21 @@ class MainViewController: UIViewController {
 extension MainViewController{
     
     func setUpTamagotchi(){
-        let riceCount = UserDefault.integer(forKey: "\(tamagotchi!.key)rice")
-        let waterCount = UserDefault.integer(forKey: "\(tamagotchi!.key)water")
-        let tamagotchiName = UserDefault.string(forKey: "\(tamagotchi!.key)name")
-        var level = tamagotchi!.getLevel(rice: riceCount, water: waterCount)
+        let riceCount = UserDefault.integer(forKey: "\(tamagotchi.key)rice")
+        let waterCount = UserDefault.integer(forKey: "\(tamagotchi.key)water")
+        let tamagotchiName = UserDefault.string(forKey: "\(tamagotchi.key)name")
+        var level = tamagotchi.getLevel(rice: riceCount, water: waterCount)
         level = level >= 10 ? 9 : level
         
         tamagotchiNameLabel.text = tamagotchiName
         tamagotchiNameLabel.setNameLabel()
-        tamagotchiImageView.image = UIImage(named: "\(tamagotchi!.key)-\(level)")
+        tamagotchiImageView.image = UIImage(named: "\(tamagotchi.key)-\(level)")
     }
     
     func setUpTamagotchiLabel(){
-        let riceCount = UserDefault.integer(forKey: "\(tamagotchi!.key)rice")
-        let waterCount = UserDefault.integer(forKey: "\(tamagotchi!.key)water")
-        let level = tamagotchi!.getLevel(rice: riceCount, water: waterCount)
+        let riceCount = UserDefault.integer(forKey: "\(tamagotchi.key)rice")
+        let waterCount = UserDefault.integer(forKey: "\(tamagotchi.key)water")
+        let level = tamagotchi.getLevel(rice: riceCount, water: waterCount)
         
         
         tamagotchiLevelLabel.text = "LV\(level)"

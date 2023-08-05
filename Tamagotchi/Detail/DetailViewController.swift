@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    var tamagotchiDetail: Tamagotchi?
+    var tamagotchiDetail: Tamagotchi!
 
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var detailNameLabel: UILabel!
@@ -36,10 +36,10 @@ class DetailViewController: UIViewController {
         detailImageView.layer.cornerRadius = detailImageView.bounds.width / 2
         detailImageView.layer.masksToBounds = true
         
-        detailImageView.image = tamagotchiDetail?.type.image
+        detailImageView.image = tamagotchiDetail.type.image
         
-        detailNameLabel.text = tamagotchiDetail?.type.name
-        detailContentsLabel.text = tamagotchiDetail?.type.contens
+        detailNameLabel.text = tamagotchiDetail.type.name
+        detailContentsLabel.text = tamagotchiDetail.type.contens
         
         
         cancelButton.alertButtonDesing(title: "취소")
@@ -53,11 +53,15 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func selectButtonTapped(_ sender: UIButton) {
+        if case .none = tamagotchiDetail.type{  print("\(tamagotchiDetail.type)")
+            showAlert(text: "준비중입니다.")
+            return
+        }
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
         
         vc.tamagotchi = tamagotchiDetail
-        setData(tamagotchi: tamagotchiDetail!)
+        setData(tamagotchi: tamagotchiDetail)
         vc.modalPresentationStyle = .overFullScreen
         
         present(vc, animated: true)
@@ -65,10 +69,7 @@ class DetailViewController: UIViewController {
     
     func setData(tamagotchi: Tamagotchi){
         let UserDefault = UserDefaults.standard
-        
         UserDefault.set(tamagotchi.name, forKey: "\(tamagotchi.key)name")
-//        UserDefault.set(tamagotchi.rice, forKey: "\(tamagotchi.key)rice")
-//        UserDefault.set(tamagotchi.water, forKey: "\(tamagotchi.key)water")
         
     }
     
