@@ -37,8 +37,16 @@ class MainViewController: UIViewController {
         setUpButton()
         setUpTalk()
         setUpTextField()
+        getNickName()
         // Do any additional setup after loading the view.
     }
+    
+    func getNickName(){
+        let nickName = UserDefault.string(forKey: "nickname")
+        
+        navigationItem.title = "\(nickName ?? "대장")님의 다마고치"
+    }
+    
     
     @IBAction func riceButtonTapped(_ sender: UIButton) {
         var riceCount = UserDefault.integer(forKey: "\(tamagotchi.key)rice")
@@ -91,12 +99,14 @@ extension MainViewController{
     
     func setUpNaviGationBar(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(setting))
-        navigationItem.title = "대장님의 다마고치"
         navigationController?.navigationBar.barTintColor = BaseColor.fontColor
                 navigationController?.navigationBar.tintColor = BaseColor.fontColor
     }
     @objc func setting(){
+        let sb = UIStoryboard(name: "Setting", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "SettingViewController") as? SettingViewController else { return }
         
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

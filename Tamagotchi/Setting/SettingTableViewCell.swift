@@ -17,8 +17,27 @@ class SettingTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setUpTableViewCellUI()
     }
-
+    
+    func setUpTableViewCellUI(){
+        settingLeftIamge.tintColor = .black
+        settingLabel.textColor = .black
+        settingNickNameLabel.textColor = BaseColor.fontColor
+        settingRightIamge.tintColor = BaseColor.fontColor
+        settingRightIamge.image = UIImage(systemName: "chevron.forward")
+    }
+    
+    
+    func setTableViewCell(settingCase: Setting){
+        let nickName = UserDefaults.standard.string(forKey: "nickname")
+        settingLeftIamge.image = UIImage(systemName: settingCase.image)
+        settingLabel.text = settingCase.text
+        if settingCase.rawValue == 0 {
+            settingNickNameLabel.text = nickName ?? "대장"
+        }else{
+            settingNickNameLabel.text = ""
+        }
+    }
     
 }
