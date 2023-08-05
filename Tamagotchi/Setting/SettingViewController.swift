@@ -16,9 +16,18 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        setUpNavigationBar()
         // Do any additional setup after loading the view.
     }
-   
+    func setUpNavigationBar(){
+        navigationController?.navigationBar.topItem?.title = ""
+        navigationItem.title = "설정"
+              navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonTapped))
+    }
+    
+    @objc func backButtonTapped(){
+        navigationController?.popViewController(animated: true)
+    }
     
 }
 

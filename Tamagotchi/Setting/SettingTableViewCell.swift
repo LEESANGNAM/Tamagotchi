@@ -10,6 +10,7 @@ import UIKit
 class SettingTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var settingLeftIamge: UIImageView!
     @IBOutlet weak var settingLabel: UILabel!
     @IBOutlet weak var settingNickNameLabel: UILabel!
@@ -21,6 +22,7 @@ class SettingTableViewCell: UITableViewCell {
     }
     
     func setUpTableViewCellUI(){
+        backView.backgroundColor = .clear
         settingLeftIamge.tintColor = .black
         settingLabel.textColor = .black
         settingNickNameLabel.textColor = BaseColor.fontColor

@@ -74,6 +74,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="backView" destination="ZaE-Zo-R1K" id="hsa-mI-6KI"/>
                 <outlet property="settingLabel" destination="QKg-SB-GGv" id="ObN-Tb-PUd"/>
                 <outlet property="settingLeftIamge" destination="aAs-lO-7Up" id="QZ2-vc-wfp"/>
                 <outlet property="settingNickNameLabel" destination="AE4-b8-UbK" id="tVj-fv-zpn"/>

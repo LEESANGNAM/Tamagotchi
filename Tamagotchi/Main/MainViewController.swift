@@ -37,9 +37,15 @@ class MainViewController: UIViewController {
         setUpButton()
         setUpTalk()
         setUpTextField()
-        getNickName()
+        
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getNickName()
+    }
+    
     
     func getNickName(){
         let nickName = UserDefault.string(forKey: "nickname")
