@@ -62,9 +62,10 @@ class DetailViewController: UIViewController {
         
         vc.tamagotchi = tamagotchiDetail
         setData(tamagotchi: tamagotchiDetail)
-        vc.modalPresentationStyle = .overFullScreen
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overFullScreen
         
-        present(vc, animated: true)
+        present(nav, animated: true)
     }
     
     func setData(tamagotchi: Tamagotchi){

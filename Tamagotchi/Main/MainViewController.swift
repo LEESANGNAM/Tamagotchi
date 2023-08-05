@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpNaviGationBar()
         setUpTamagotchi()
         setUpTamagotchiLabel()
         setUpButton()
@@ -87,6 +87,18 @@ class MainViewController: UIViewController {
 
 // MARK: - UI
 extension MainViewController{
+    
+    
+    func setUpNaviGationBar(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(setting))
+        navigationItem.title = "대장님의 다마고치"
+        navigationController?.navigationBar.barTintColor = BaseColor.fontColor
+                navigationController?.navigationBar.tintColor = BaseColor.fontColor
+    }
+    @objc func setting(){
+        
+    }
+    
     
     func setUpTamagotchi(){
         let riceCount = UserDefault.integer(forKey: "\(tamagotchi.key)rice")
