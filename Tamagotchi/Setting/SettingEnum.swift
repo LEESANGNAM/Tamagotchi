@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Setting: Int{
+enum Setting: Int, CaseIterable{
     case myName
     case changTamagotchi
     case resetData
@@ -20,6 +20,17 @@ enum Setting: Int{
             return "moon.fill"
         case .resetData:
             return "arrow.clockwise"
+        }
+    }
+    
+    var text: String{
+        switch self{
+        case .myName:
+            return "내 이름 설정하기"
+        case .changTamagotchi:
+            return "다마고치 변경하기"
+        case .resetData:
+            return "데이터 초기화"
         }
     }
     
