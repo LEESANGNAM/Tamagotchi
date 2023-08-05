@@ -67,8 +67,8 @@ class DetailViewController: UIViewController {
         let UserDefault = UserDefaults.standard
         
         UserDefault.set(tamagotchi.name, forKey: "\(tamagotchi.key)name")
-        UserDefault.set(tamagotchi.rice, forKey: "\(tamagotchi.key)rice")
-        UserDefault.set(tamagotchi.water, forKey: "\(tamagotchi.key)water")
+//        UserDefault.set(tamagotchi.rice, forKey: "\(tamagotchi.key)rice")
+//        UserDefault.set(tamagotchi.water, forKey: "\(tamagotchi.key)water")
         
     }
     

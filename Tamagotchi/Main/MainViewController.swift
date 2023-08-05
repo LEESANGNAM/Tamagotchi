@@ -41,7 +41,6 @@ class MainViewController: UIViewController {
     }
     
     
-    
     func setUpTamagotchi(){
         let level = tamagotchi!.getLavel()
         let tamagotchiName = UserDefault.string(forKey: "\(tamagotchi!.key)name")
@@ -53,6 +52,8 @@ class MainViewController: UIViewController {
     func setUpTamagotchiLabel(){
         let riceCount = UserDefault.integer(forKey: "\(tamagotchi!.key)rice")
         let waterCount = UserDefault.integer(forKey: "\(tamagotchi!.key)water")
+        
+        
         
         tamagotchiLevelLabel.text = "LV\(tamagotchi!.getLavel())"
         tamagotchiLevelLabel.setInfoLabel()
@@ -79,6 +80,22 @@ class MainViewController: UIViewController {
         waterTextField.textFieldNumberDesign(palceholder: "물줘요")
     }
     
-
+    @IBAction func riceButtonTapped(_ sender: UIButton) {
+        var riceCount = UserDefault.integer(forKey: "\(tamagotchi!.key)rice")
+        riceCount += 1
+        UserDefault.set(riceCount, forKey: "\(tamagotchi!.key)rice")
+        
+        setUpTamagotchiLabel()
+        
+    }
+    
+    
+    @IBAction func waterButtonTapped(_ sender: UIButton) {
+        var waterCount = UserDefault.integer(forKey: "\(tamagotchi!.key)water")
+        waterCount += 1
+        UserDefault.set(waterCount, forKey: "\(tamagotchi!.key)water")
+        
+        setUpTamagotchiLabel()
+    }
     
 }
