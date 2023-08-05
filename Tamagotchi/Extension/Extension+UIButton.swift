@@ -8,12 +8,20 @@
 import UIKit
 
 extension UIButton{
+    
+    func alertButtonDesing(title: String){
+        self.tintColor = BaseColor.fontColor
+        self.setTitle(title, for: .normal)
+        self.layer.borderWidth = 1
+        self.layer.borderColor = BaseColor.borderColor
+    }
+    
     func eatButtonDesing(title: String, systemImage: String){
-        self.tintColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        self.tintColor = BaseColor.fontColor
         self.setImage(UIImage(systemName: systemImage), for: .normal)
         self.setTitle(title, for: .normal)
         self.layer.borderWidth = 1
-        self.layer.borderColor = CGColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
+        self.layer.borderColor = BaseColor.borderColor
         self.layer.cornerRadius = 5
     }
 }

@@ -42,10 +42,8 @@ class DetailViewController: UIViewController {
         detailContentsLabel.text = tamagotchiDetail?.type.contens
         
         
-        cancelButton.titleLabel?.text = "취소"
-        cancelButton.layer.borderWidth = 1
-        selectButton.titleLabel?.text = "시작하기"
-        selectButton.layer.borderWidth = 1
+        cancelButton.alertButtonDesing(title: "취소")
+        selectButton.alertButtonDesing(title: "선택하기")
     }
     
     
