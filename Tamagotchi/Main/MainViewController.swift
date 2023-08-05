@@ -42,8 +42,13 @@ class MainViewController: UIViewController {
     
     
     func setUpTamagotchi(){
-        let level = tamagotchi!.getLavel()
+        
+        let riceCount = UserDefault.integer(forKey: "\(tamagotchi!.key)rice")
+        let waterCount = UserDefault.integer(forKey: "\(tamagotchi!.key)water")
         let tamagotchiName = UserDefault.string(forKey: "\(tamagotchi!.key)name")
+        var level = tamagotchi!.getLevel(rice: riceCount, water: waterCount)
+        level = level >= 10 ? 9 : level
+        
         tamagotchiNameLabel.text = tamagotchiName
         tamagotchiNameLabel.setNameLabel()
         tamagotchiImageView.image = UIImage(named: "\(tamagotchi!.key)-\(level)")
@@ -52,10 +57,10 @@ class MainViewController: UIViewController {
     func setUpTamagotchiLabel(){
         let riceCount = UserDefault.integer(forKey: "\(tamagotchi!.key)rice")
         let waterCount = UserDefault.integer(forKey: "\(tamagotchi!.key)water")
+        let level = tamagotchi!.getLevel(rice: riceCount, water: waterCount)
         
         
-        
-        tamagotchiLevelLabel.text = "LV\(tamagotchi!.getLavel())"
+        tamagotchiLevelLabel.text = "LV\(level)"
         tamagotchiLevelLabel.setInfoLabel()
         tamagotchiRiceLabel.text = "밥알\(riceCount)개"
         tamagotchiRiceLabel.setInfoLabel()
@@ -86,7 +91,7 @@ class MainViewController: UIViewController {
         UserDefault.set(riceCount, forKey: "\(tamagotchi!.key)rice")
         
         setUpTamagotchiLabel()
-        
+        setUpTamagotchi()
     }
     
     
@@ -96,6 +101,7 @@ class MainViewController: UIViewController {
         UserDefault.set(waterCount, forKey: "\(tamagotchi!.key)water")
         
         setUpTamagotchiLabel()
+        setUpTamagotchi()
     }
     
 }

@@ -82,7 +82,7 @@ struct Tamagotchi {
     var rice = 0
     var water = 0
     
-    func getLavel() -> Int{
+    func getLevel(rice: Int, water: Int) -> Int{
        let level = ((rice / 5) + (water / 2)) / 10
         if level <= 1{
             return 1
