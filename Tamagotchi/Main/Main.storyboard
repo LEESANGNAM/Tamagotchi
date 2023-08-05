@@ -154,6 +154,19 @@
                             <constraint firstItem="F24-M6-udZ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="htx-lE-CsA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="TalkLabel" destination="gIi-0m-Jbl" id="Hbu-G3-xC4"/>
+                        <outlet property="riceButton" destination="97r-KP-fqM" id="n22-iN-ebL"/>
+                        <outlet property="riceTextField" destination="SXn-1y-wxO" id="Fqf-XJ-TLL"/>
+                        <outlet property="talkImageView" destination="6e6-1u-33R" id="eBj-xN-6bE"/>
+                        <outlet property="tamagotchiImageView" destination="nbn-yc-gTf" id="pgQ-wc-i8F"/>
+                        <outlet property="tamagotchiLevelLabel" destination="Zyk-3b-wt2" id="WqP-k3-rRj"/>
+                        <outlet property="tamagotchiNameLabel" destination="oAZ-Q5-xHO" id="pP5-ik-k0r"/>
+                        <outlet property="tamagotchiRiceLabel" destination="DC5-vb-9uS" id="jlz-zd-QYN"/>
+                        <outlet property="tamagotchiWaterLabel" destination="Dqs-3a-j1G" id="WRS-gk-eJ6"/>
+                        <outlet property="waterButton" destination="Lst-MS-rLt" id="B5e-te-mRc"/>
+                        <outlet property="waterTextField" destination="naK-R7-U5D" id="lZm-D3-OdZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
