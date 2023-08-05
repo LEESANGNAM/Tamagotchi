@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
         setUpTamagotchiLabel()
         setUpButton()
         setUpTalk()
+        setUpTextField()
         // Do any additional setup after loading the view.
     }
     
@@ -73,6 +74,10 @@ class MainViewController: UIViewController {
         talkLabel.setInfoLabel()
     }
     
+    func setUpTextField(){
+        riceTextField.textFieldNumberDesign(palceholder: "밥줘요")
+        waterTextField.textFieldNumberDesign(palceholder: "물줘요")
+    }
     
 
     
