@@ -62,13 +62,7 @@ struct Tamagotchi {
     var name: String {
         return type.name
     }
-    var key: Int{
-        return type.key
-    }
-    var rice = 0
-    var water = 0
-    
-    func getLevel(rice: Int, water: Int) -> Int{
+    static func getLevel(rice: Int, water: Int) -> Int{
        let level = ((rice / 5) + (water / 2)) / 10
         if level <= 1{
             return 1
@@ -78,8 +72,7 @@ struct Tamagotchi {
             return level
         }
     }
-    
-    func getType(name: String) -> TamagotchiType{
+    static func getType(name: String) -> TamagotchiType{
         switch name{
         case "따끔따끔 다마고치": return TamagotchiType.ttakkeum
         case "방실방실 다마고치": return TamagotchiType.bangsil
