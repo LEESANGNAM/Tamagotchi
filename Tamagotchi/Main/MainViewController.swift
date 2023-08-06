@@ -88,11 +88,11 @@ class MainViewController: UIViewController {
         let limit = textFieldLimit(textFiled: textField)
         
         if num >= limit {
-            showAlert(text: "\(limit)미만으로 입력가능 alert 띄울 예정")
+            showAlert(text: "\(limit)미만으로 입력가능")
             textField.text = ""
             return 0
-        }else if num <= 0 {
-            showAlert(text: "ㅠㅠ 제 밥 뺏어가지마세요. 양수로 입력해주세요")
+        }else if num < 0 {
+            showAlert(text: "ㅠㅠ 제 밥 뺏어가지마세요. 0이상 입력해주세요.")
             textField.text = ""
             return 0
         }
