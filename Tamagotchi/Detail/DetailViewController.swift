@@ -10,7 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var tamagotchiDetail: Tamagotchi!
-
+    var text = ""
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var detailNameLabel: UILabel!
     @IBOutlet weak var detailContentsLabel: UILabel!
@@ -23,6 +23,12 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let isSelect = UserDefaults.standard.bool(forKey: UserDefaultsKey.isSelect.key)
+        if isSelect{
+            text = "변경하기"
+        }else{
+            text = "선택하기"
+        }
         setUpUI()
         // Do any additional setup after loading the view.
     }
@@ -43,7 +49,7 @@ class DetailViewController: UIViewController {
         
         
         cancelButton.alertButtonDesing(title: "취소")
-        selectButton.alertButtonDesing(title: "선택하기")
+        selectButton.alertButtonDesing(title: text)
     }
     
     

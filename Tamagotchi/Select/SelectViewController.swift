@@ -17,9 +17,16 @@ class SelectViewController: UIViewController {
         super.viewDidLoad()
         setData()
         setCollectionView()
-        self.title = "다마고치 선택하기"
+        let isSelect = UserDefaults.standard.bool(forKey: UserDefaultsKey.isSelect.key)
+        if isSelect {
+            self.title = "다마고치 변경하기"
+        }else {
+            self.title = "다마고치 선택하기"
+        }
         // Do any additional setup after loading the view.
     }
+    
+    
     func setData(){
         tamagotchi = [
             Tamagotchi(type: .ttakkeum),
