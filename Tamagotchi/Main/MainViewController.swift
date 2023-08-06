@@ -48,26 +48,31 @@ class MainViewController: UIViewController {
     
     
     func getNickName(){
-        let nickName = UserDefault.string(forKey: UserDefaultsKey.nickname.key)
-        
-        navigationItem.title = "\(nickName ?? "대장")님의 다마고치"
+        let nickName = UserDefault.string(forKey: UserDefaultsKey.nickname.key) ?? "대장"
+        setUpMessage(nickname: nickName)
+        navigationItem.title = "\(nickName)님의 다마고치"
     }
     
     
     @IBAction func riceButtonTapped(_ sender: UIButton) {
         var riceCount = UserDefault.integer(forKey: UserDefaultsKey.rice.key)
+        let nickName = UserDefault.string(forKey: UserDefaultsKey.nickname.key) ?? "대장"
+        
         riceCount += getTextFieldValue(textField: riceTextField)
         UserDefault.set(riceCount, forKey: UserDefaultsKey.rice.key)
         
+        setUpMessage(nickname: nickName)
         setUpTamagotchiLabel()
         setUpTamagotchi()
     }
     
     @IBAction func waterButtonTapped(_ sender: UIButton) {
         var waterCount = UserDefault.integer(forKey: UserDefaultsKey.water.key)
+        let nickName = UserDefault.string(forKey: UserDefaultsKey.nickname.key) ?? "대장"
         waterCount += getTextFieldValue(textField: waterTextField)
         UserDefault.set(waterCount, forKey: UserDefaultsKey.water.key)
         
+        setUpMessage(nickname: nickName)
         setUpTamagotchiLabel()
         setUpTamagotchi()
     }
@@ -151,8 +156,11 @@ extension MainViewController{
     
     func setUpTalk(){
         talkImageView.image = UIImage(named: "bubble")
-        talkLabel.text = "말풍선 대화 추가예정입니다."
         talkLabel.setInfoLabel()
+    }
+    func setUpMessage(nickname: String){
+        Message.setupMessages(nickname: nickname)
+        talkLabel.text = Message.messge.randomElement()
     }
     
     func setUpTextField(){

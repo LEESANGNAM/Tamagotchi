@@ -32,6 +32,7 @@
 		D6B63E112A7EB58B006377A1 /* SettingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E102A7EB58B006377A1 /* SettingEnum.swift */; };
 		D6B63E132A7F55CD006377A1 /* SettingNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E122A7F55CD006377A1 /* SettingNameViewController.swift */; };
 		D6B63E152A7F9541006377A1 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E142A7F9541006377A1 /* UserDefaultsKey.swift */; };
+		D6B63E172A7FB79B006377A1 /* TalkMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E162A7FB79B006377A1 /* TalkMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		D6B63E102A7EB58B006377A1 /* SettingEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEnum.swift; sourceTree = "<group>"; };
 		D6B63E122A7F55CD006377A1 /* SettingNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNameViewController.swift; sourceTree = "<group>"; };
 		D6B63E142A7F9541006377A1 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		D6B63E162A7FB79B006377A1 /* TalkMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				D698B6172A7D1EFF00ED3D28 /* AppDelegate.swift */,
 				D698B6192A7D1EFF00ED3D28 /* SceneDelegate.swift */,
 				D6B63E142A7F9541006377A1 /* UserDefaultsKey.swift */,
+				D6B63E162A7FB79B006377A1 /* TalkMessage.swift */,
 				D698B6202A7D1F0000ED3D28 /* Assets.xcassets */,
 				D698B6222A7D1F0000ED3D28 /* LaunchScreen.storyboard */,
 				D698B6252A7D1F0000ED3D28 /* Info.plist */,
@@ -255,6 +258,7 @@
 				D67320A12A7E2AD600916497 /* Extension+UIButton.swift in Sources */,
 				D6B63E112A7EB58B006377A1 /* SettingEnum.swift in Sources */,
 				D698B61A2A7D1EFF00ED3D28 /* SceneDelegate.swift in Sources */,
+				D6B63E172A7FB79B006377A1 /* TalkMessage.swift in Sources */,
 				D67320962A7D5CA300916497 /* Tamagotchi.swift in Sources */,
 				D6B63E042A7E3E8C006377A1 /* BaseColor.swift in Sources */,
 			);
