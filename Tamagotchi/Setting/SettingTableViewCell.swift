@@ -32,7 +32,7 @@ class SettingTableViewCell: UITableViewCell {
     
     
     func setTableViewCell(settingCase: Setting){
-        let nickName = UserDefaults.standard.string(forKey: "nickname")
+        let nickName = UserDefaults.standard.string(forKey: UserDefaultsKey.nickname.key)
         settingLeftIamge.image = UIImage(systemName: settingCase.image)
         settingLabel.text = settingCase.text
         if settingCase.rawValue == 0 {

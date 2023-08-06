@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     let UserDefault = UserDefaults.standard
-    var tamagotchi: Tamagotchi!
+   
     @IBOutlet weak var talkImageView: UIImageView!
     @IBOutlet weak var talkLabel: UILabel!
     
@@ -48,25 +48,25 @@ class MainViewController: UIViewController {
     
     
     func getNickName(){
-        let nickName = UserDefault.string(forKey: "nickname")
+        let nickName = UserDefault.string(forKey: UserDefaultsKey.nickname.key)
         
         navigationItem.title = "\(nickName ?? "대장")님의 다마고치"
     }
     
     
     @IBAction func riceButtonTapped(_ sender: UIButton) {
-        var riceCount = UserDefault.integer(forKey: "\(tamagotchi.key)rice")
+        var riceCount = UserDefault.integer(forKey: UserDefaultsKey.rice.key)
         riceCount += getTextFieldValue(textField: riceTextField)
-        UserDefault.set(riceCount, forKey: "\(tamagotchi.key)rice")
+        UserDefault.set(riceCount, forKey: UserDefaultsKey.rice.key)
         
         setUpTamagotchiLabel()
         setUpTamagotchi()
     }
     
     @IBAction func waterButtonTapped(_ sender: UIButton) {
-        var waterCount = UserDefault.integer(forKey: "\(tamagotchi.key)water")
+        var waterCount = UserDefault.integer(forKey: UserDefaultsKey.water.key)
         waterCount += getTextFieldValue(textField: waterTextField)
-        UserDefault.set(waterCount, forKey: "\(tamagotchi.key)water")
+        UserDefault.set(waterCount, forKey: UserDefaultsKey.water.key)
         
         setUpTamagotchiLabel()
         setUpTamagotchi()
@@ -117,21 +117,22 @@ extension MainViewController{
     
     
     func setUpTamagotchi(){
-        let riceCount = UserDefault.integer(forKey: "\(tamagotchi.key)rice")
-        let waterCount = UserDefault.integer(forKey: "\(tamagotchi.key)water")
-        let tamagotchiName = UserDefault.string(forKey: "\(tamagotchi.key)name")
-        var level = tamagotchi.getLevel(rice: riceCount, water: waterCount)
+        guard let tamagotchiName = UserDefault.string(forKey: UserDefaultsKey.name.key) else { return }
+        let riceCount = UserDefault.integer(forKey: UserDefaultsKey.rice.key)
+        let waterCount = UserDefault.integer(forKey: UserDefaultsKey.water.key)
+        let tamagotchiType = Tamagotchi.getType(name: tamagotchiName)
+        var level = Tamagotchi.getLevel(rice: riceCount, water: waterCount)
         level = level >= 10 ? 9 : level
         
         tamagotchiNameLabel.text = tamagotchiName
         tamagotchiNameLabel.setNameLabel()
-        tamagotchiImageView.image = UIImage(named: "\(tamagotchi.key)-\(level)")
+        tamagotchiImageView.image = UIImage(named: "\(tamagotchiType.rawValue)-\(level)")
     }
     
     func setUpTamagotchiLabel(){
-        let riceCount = UserDefault.integer(forKey: "\(tamagotchi.key)rice")
-        let waterCount = UserDefault.integer(forKey: "\(tamagotchi.key)water")
-        let level = tamagotchi.getLevel(rice: riceCount, water: waterCount)
+        let riceCount = UserDefault.integer(forKey: UserDefaultsKey.rice.key)
+        let waterCount = UserDefault.integer(forKey: UserDefaultsKey.water.key)
+        let level = Tamagotchi.getLevel(rice: riceCount, water: waterCount)
         
         
         tamagotchiLevelLabel.text = "LV\(level)"

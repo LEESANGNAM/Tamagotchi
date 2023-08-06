@@ -57,10 +57,10 @@ class DetailViewController: UIViewController {
             showAlert(text: "준비중입니다.")
             return
         }
+        UserDefaults.standard.setValue(true, forKey: UserDefaultsKey.isSelect.key)
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
         
-        vc.tamagotchi = tamagotchiDetail
         setData(tamagotchi: tamagotchiDetail)
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .overFullScreen
@@ -70,7 +70,7 @@ class DetailViewController: UIViewController {
     
     func setData(tamagotchi: Tamagotchi){
         let UserDefault = UserDefaults.standard
-        UserDefault.set(tamagotchi.name, forKey: "\(tamagotchi.key)name")
+        UserDefault.set(tamagotchi.name, forKey: UserDefaultsKey.name.key)
         
     }
     
