@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
+    let UserDefault = UserDefaults.standard
     var tamagotchiDetail: Tamagotchi!
     var text = ""
     @IBOutlet weak var detailImageView: UIImageView!
@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let isSelect = UserDefaults.standard.bool(forKey: UserDefaultsKey.isSelect.key)
+        let isSelect = UserDefault.bool(forKey: UserDefaultsKey.isSelect.key)
         if isSelect{
             text = "변경하기"
         }else{
@@ -63,19 +63,24 @@ class DetailViewController: UIViewController {
             showAlert(text: "준비중입니다.")
             return
         }
-        UserDefaults.standard.setValue(true, forKey: UserDefaultsKey.isSelect.key)
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+        changeRootView()
+    }
+    
+    func changeRootView(){
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
         
+        UserDefault.set(true, forKey: UserDefaultsKey.isSelect.key)
         setData(tamagotchi: tamagotchiDetail)
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .overFullScreen
         
-        present(nav, animated: true)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        let nav = UINavigationController(rootViewController: vc)
+        sceneDelegate?.window?.rootViewController = nav
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
     
     func setData(tamagotchi: Tamagotchi){
-        let UserDefault = UserDefaults.standard
         UserDefault.set(tamagotchi.name, forKey: UserDefaultsKey.name.key)
         
     }
