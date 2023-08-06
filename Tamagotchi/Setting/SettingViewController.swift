@@ -66,9 +66,38 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         }else {
             print("초기화")
+            resetAlert()
         }
     }
     
+    func resetAlert(){
+        
+        let alert = UIAlertController(title: "초기화", message: "정말 전부 초기화 하시겠습니까?", preferredStyle: .alert)
+        let cencle = UIAlertAction(title: "아니요", style: .cancel)
+        let ok = UIAlertAction(title: "네", style: .default) { _ in
+            if let bundleID = Bundle.main.bundleIdentifier {
+                UserDefaults.standard.removePersistentDomain(forName: bundleID)
+            }
+            self.changeRootView()
+        }
+        
+        alert.addAction(cencle)
+        alert.addAction(ok)
+        
+        present(alert, animated: true)
+        
+    }
+    
+    func changeRootView(){
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let sb = UIStoryboard(name: "Select", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "SelectViewController") as? SelectViewController else { return }
+        let nav = UINavigationController(rootViewController: vc)
+        sceneDelegate?.window?.rootViewController = nav
+        sceneDelegate?.window?.makeKeyAndVisible()
+    }
     
     
     func findCell(){
