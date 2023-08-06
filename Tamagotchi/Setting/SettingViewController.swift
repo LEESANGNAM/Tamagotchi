@@ -19,6 +19,12 @@ class SettingViewController: UIViewController {
         setUpNavigationBar()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        settingTableView.reloadData()
+    }
+    
     func setUpNavigationBar(){
         navigationController?.navigationBar.topItem?.title = ""
         navigationItem.title = "설정"
@@ -47,6 +53,22 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0{
+            print("이름변경창!")
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "SettingNameViewController") as? SettingNameViewController else { return }
+            
+            navigationController?.pushViewController(vc, animated: true)
+            
+        }else if indexPath.row == 1 {
+            print("다마고치변경!")
+        }else {
+            print("초기화")
+        }
+    }
+    
+    
     
     func findCell(){
         let nib = UINib(nibName: "SettingTableViewCell", bundle: nil)
