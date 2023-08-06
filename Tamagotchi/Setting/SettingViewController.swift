@@ -58,11 +58,12 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
         if indexPath.row == 0{
             print("이름변경창!")
             guard let vc = storyboard?.instantiateViewController(withIdentifier: "SettingNameViewController") as? SettingNameViewController else { return }
-            
             navigationController?.pushViewController(vc, animated: true)
-            
         }else if indexPath.row == 1 {
             print("다마고치변경!")
+            let sb = UIStoryboard(name: "Select", bundle: nil)
+            guard let vc = sb.instantiateViewController(withIdentifier: "SelectViewController") as? SelectViewController else { return }
+            navigationController?.pushViewController(vc, animated: true)
         }else {
             print("초기화")
         }
