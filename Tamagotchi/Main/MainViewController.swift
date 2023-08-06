@@ -80,17 +80,24 @@ class MainViewController: UIViewController {
     func getTextFieldValue(textField: UITextField) -> Int {
         guard let text = textField.text, !text.isEmpty else { return 1 }
         guard let num = Int(text) else {
-            showAlert(text: "\(text)는 숫자가 아님 alert 띄울예정")
+            showAlert(text: "\(text) 말고 숫자를 입력해주세요 ")
             textField.text = ""
             return 0
         }
+        
         let limit = textFieldLimit(textFiled: textField)
         
         if num >= limit {
             showAlert(text: "\(limit)미만으로 입력가능 alert 띄울 예정")
             textField.text = ""
             return 0
-        }else{
+        }else if num <= 0 {
+            showAlert(text: "ㅠㅠ 제 밥 뺏어가지마세요. 양수로 입력해주세요")
+            textField.text = ""
+            return 0
+        }
+        else{
+            textField.text = ""
             return num
         }
     }
