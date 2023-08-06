@@ -54,20 +54,6 @@ enum TamagotchiType: Int{
         }
     }
     
-    var key: Int {
-        switch self{
-        case .none:
-            return 0
-        case .ttakkeum:
-            return 1
-        case .bangsil:
-            return 2
-        case .banjjag:
-            return 3
-        }
-    }
-    
-    
 }
 
 
@@ -90,6 +76,16 @@ struct Tamagotchi {
             return 10
         }else{
             return level
+        }
+    }
+    
+    func getType(name: String) -> TamagotchiType{
+        switch name{
+        case "따끔따끔 다마고치": return TamagotchiType.ttakkeum
+        case "방실방실 다마고치": return TamagotchiType.bangsil
+        case "반짝반짝 다마고치": return TamagotchiType.banjjag
+        default:
+            return TamagotchiType.none
         }
     }
 }
