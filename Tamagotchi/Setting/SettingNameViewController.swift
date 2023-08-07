@@ -27,6 +27,7 @@ class SettingNameViewController: UIViewController {
     
     @objc func setName(){
         guard let text = nameSettingTextField.text, !text.isEmpty else {
+            navigationController?.popViewController(animated: true)
             return
         }
         if text.count < 2 {

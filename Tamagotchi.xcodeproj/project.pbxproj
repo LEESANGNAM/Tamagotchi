@@ -33,7 +33,6 @@
 		D6B63E132A7F55CD006377A1 /* SettingNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E122A7F55CD006377A1 /* SettingNameViewController.swift */; };
 		D6B63E152A7F9541006377A1 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E142A7F9541006377A1 /* UserDefaultsKey.swift */; };
 		D6B63E172A7FB79B006377A1 /* TalkMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E162A7FB79B006377A1 /* TalkMessage.swift */; };
-		D6B63E192A7FEFB3006377A1 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E182A7FEFB3006377A1 /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +64,6 @@
 		D6B63E122A7F55CD006377A1 /* SettingNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNameViewController.swift; sourceTree = "<group>"; };
 		D6B63E142A7F9541006377A1 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		D6B63E162A7FB79B006377A1 /* TalkMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkMessage.swift; sourceTree = "<group>"; };
-		D6B63E182A7FEFB3006377A1 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +134,6 @@
 				D698B6172A7D1EFF00ED3D28 /* AppDelegate.swift */,
 				D698B6192A7D1EFF00ED3D28 /* SceneDelegate.swift */,
 				D6B63E142A7F9541006377A1 /* UserDefaultsKey.swift */,
-				D6B63E182A7FEFB3006377A1 /* Protocol.swift */,
 				D6B63E162A7FB79B006377A1 /* TalkMessage.swift */,
 				D698B6202A7D1F0000ED3D28 /* Assets.xcassets */,
 				D698B6222A7D1F0000ED3D28 /* LaunchScreen.storyboard */,
@@ -255,7 +252,6 @@
 				D698B61C2A7D1EFF00ED3D28 /* SelectViewController.swift in Sources */,
 				D698B62E2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.swift in Sources */,
 				D698B6182A7D1EFF00ED3D28 /* AppDelegate.swift in Sources */,
-				D6B63E192A7FEFB3006377A1 /* Protocol.swift in Sources */,
 				D6B63E132A7F55CD006377A1 /* SettingNameViewController.swift in Sources */,
 				D673209B2A7D72E300916497 /* DetailViewController.swift in Sources */,
 				D6B63E002A7E3D92006377A1 /* Extension+UILabel.swift in Sources */,
@@ -414,6 +410,7 @@
 				DEVELOPMENT_TEAM = Y7C6A3W353;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tamagotchi/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "이상남";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -447,6 +444,7 @@
 				DEVELOPMENT_TEAM = Y7C6A3W353;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tamagotchi/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "이상남";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
