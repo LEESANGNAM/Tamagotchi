@@ -76,8 +76,7 @@ class MainViewController: UIViewController {
             waterCount += getTextFieldValue(textField: waterTextField)
             UserDefaultsHelper.standard.water = waterCount
         }
-        let nickName = UserDefaultsHelper.standard.nickname
-        setUpMessage(nickname: nickName)
+        talkLabel.text = Message.messge.randomElement()
         setUpTamagotchi()
     }
     
