@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let isSelect = UserDefault.bool(forKey: UserDefaultsKey.isSelect.key)
+        let isSelect = UserDefaultsHelper.standard.isSelect
         if isSelect{
             text = "변경하기"
         }else{
@@ -70,7 +70,7 @@ class DetailViewController: UIViewController {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
         
-        UserDefault.set(true, forKey: UserDefaultsKey.isSelect.key)
+        UserDefaultsHelper.standard.isSelect = true
         setData(tamagotchi: tamagotchiDetail)
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -81,7 +81,7 @@ class DetailViewController: UIViewController {
     }
     
     func setData(tamagotchi: Tamagotchi){
-        UserDefault.set(tamagotchi.name, forKey: UserDefaultsKey.name.key)
+        UserDefaultsHelper.standard.name = tamagotchi.name
         
     }
     

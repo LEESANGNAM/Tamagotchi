@@ -48,18 +48,18 @@ class MainViewController: UIViewController {
     
     
     func getNickName(){
-        let nickName = UserDefault.string(forKey: UserDefaultsKey.nickname.key) ?? "대장"
+        let nickName = UserDefaultsHelper.standard.nickname
         setUpMessage(nickname: nickName)
         navigationItem.title = "\(nickName)님의 다마고치"
     }
     
     
     @IBAction func riceButtonTapped(_ sender: UIButton) {
-        var riceCount = UserDefault.integer(forKey: UserDefaultsKey.rice.key)
-        let nickName = UserDefault.string(forKey: UserDefaultsKey.nickname.key) ?? "대장"
+        var riceCount = UserDefaultsHelper.standard.rice
+        let nickName = UserDefaultsHelper.standard.nickname
         
         riceCount += getTextFieldValue(textField: riceTextField)
-        UserDefault.set(riceCount, forKey: UserDefaultsKey.rice.key)
+        UserDefaultsHelper.standard.rice = riceCount
         
         setUpMessage(nickname: nickName)
         setUpTamagotchiLabel()
@@ -67,10 +67,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func waterButtonTapped(_ sender: UIButton) {
-        var waterCount = UserDefault.integer(forKey: UserDefaultsKey.water.key)
-        let nickName = UserDefault.string(forKey: UserDefaultsKey.nickname.key) ?? "대장"
+        var waterCount = UserDefaultsHelper.standard.water
+        let nickName = UserDefaultsHelper.standard.nickname
+        
         waterCount += getTextFieldValue(textField: waterTextField)
-        UserDefault.set(waterCount, forKey: UserDefaultsKey.water.key)
+        UserDefaultsHelper.standard.water = waterCount
         
         setUpMessage(nickname: nickName)
         setUpTamagotchiLabel()
@@ -129,9 +130,9 @@ extension MainViewController{
     
     
     func setUpTamagotchi(){
-        guard let tamagotchiName = UserDefault.string(forKey: UserDefaultsKey.name.key) else { return }
-        let riceCount = UserDefault.integer(forKey: UserDefaultsKey.rice.key)
-        let waterCount = UserDefault.integer(forKey: UserDefaultsKey.water.key)
+        let tamagotchiName = UserDefaultsHelper.standard.name
+        let riceCount = UserDefaultsHelper.standard.rice
+        let waterCount = UserDefaultsHelper.standard.water
         let tamagotchiType = Tamagotchi.getType(name: tamagotchiName)
         var level = Tamagotchi.getLevel(rice: riceCount, water: waterCount)
         level = level >= 10 ? 9 : level
@@ -142,8 +143,8 @@ extension MainViewController{
     }
     
     func setUpTamagotchiLabel(){
-        let riceCount = UserDefault.integer(forKey: UserDefaultsKey.rice.key)
-        let waterCount = UserDefault.integer(forKey: UserDefaultsKey.water.key)
+        let riceCount = UserDefaultsHelper.standard.rice
+        let waterCount = UserDefaultsHelper.standard.water
         let level = Tamagotchi.getLevel(rice: riceCount, water: waterCount)
         
         
@@ -175,3 +176,5 @@ extension MainViewController{
         waterTextField.textFieldNumberDesign(palceholder: "물줘요")
     }
 }
+
+

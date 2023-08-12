@@ -35,7 +35,7 @@ class SettingNameViewController: UIViewController {
         }else if text.count > 6 {
             showAlert(text: "닉네임은 6글자 이하로 가능합니다")
         }else{
-            UserDefaults.standard.set(text, forKey: UserDefaultsKey.nickname.key)
+            UserDefaultsHelper.standard.nickname = text
         }
         
         navigationController?.popViewController(animated: true)

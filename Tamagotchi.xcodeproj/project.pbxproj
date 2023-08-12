@@ -31,7 +31,7 @@
 		D6B63E0F2A7EB223006377A1 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B63E0D2A7EB223006377A1 /* SettingTableViewCell.xib */; };
 		D6B63E112A7EB58B006377A1 /* SettingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E102A7EB58B006377A1 /* SettingEnum.swift */; };
 		D6B63E132A7F55CD006377A1 /* SettingNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E122A7F55CD006377A1 /* SettingNameViewController.swift */; };
-		D6B63E152A7F9541006377A1 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E142A7F9541006377A1 /* UserDefaultsKey.swift */; };
+		D6B63E152A7F9541006377A1 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E142A7F9541006377A1 /* UserDefaults.swift */; };
 		D6B63E172A7FB79B006377A1 /* TalkMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B63E162A7FB79B006377A1 /* TalkMessage.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +62,7 @@
 		D6B63E0D2A7EB223006377A1 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		D6B63E102A7EB58B006377A1 /* SettingEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEnum.swift; sourceTree = "<group>"; };
 		D6B63E122A7F55CD006377A1 /* SettingNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNameViewController.swift; sourceTree = "<group>"; };
-		D6B63E142A7F9541006377A1 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		D6B63E142A7F9541006377A1 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		D6B63E162A7FB79B006377A1 /* TalkMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +133,7 @@
 				D698B62B2A7D495C00ED3D28 /* Select */,
 				D698B6172A7D1EFF00ED3D28 /* AppDelegate.swift */,
 				D698B6192A7D1EFF00ED3D28 /* SceneDelegate.swift */,
-				D6B63E142A7F9541006377A1 /* UserDefaultsKey.swift */,
+				D6B63E142A7F9541006377A1 /* UserDefaults.swift */,
 				D6B63E162A7FB79B006377A1 /* TalkMessage.swift */,
 				D698B6202A7D1F0000ED3D28 /* Assets.xcassets */,
 				D698B6222A7D1F0000ED3D28 /* LaunchScreen.storyboard */,
@@ -246,7 +246,7 @@
 				D6B63E062A7EA024006377A1 /* Extension_UIViewController.swift in Sources */,
 				D673209E2A7E016700916497 /* MainViewController.swift in Sources */,
 				D6B63E0E2A7EB223006377A1 /* SettingTableViewCell.swift in Sources */,
-				D6B63E152A7F9541006377A1 /* UserDefaultsKey.swift in Sources */,
+				D6B63E152A7F9541006377A1 /* UserDefaults.swift in Sources */,
 				D6B63DFE2A7E3D80006377A1 /* Extension+UITextField.swift in Sources */,
 				D6B63E0B2A7EB169006377A1 /* SettingViewController.swift in Sources */,
 				D698B61C2A7D1EFF00ED3D28 /* SelectViewController.swift in Sources */,

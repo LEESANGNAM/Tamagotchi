@@ -17,7 +17,7 @@ class SelectViewController: UIViewController {
         super.viewDidLoad()
         setData()
         setCollectionView()
-        let isSelect = UserDefaults.standard.bool(forKey: UserDefaultsKey.isSelect.key)
+        let isSelect = UserDefaultsHelper.standard.isSelect
         if isSelect {
             self.title = "다마고치 변경하기"
         }else {
