@@ -33,7 +33,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         setUpNaviGationBar()
         setUpTamagotchi()
-        setUpTamagotchiLabel()
         setUpButton()
         setUpTalk()
         setUpTextField()
@@ -55,28 +54,35 @@ class MainViewController: UIViewController {
     
     
     @IBAction func riceButtonTapped(_ sender: UIButton) {
-        var riceCount = UserDefaultsHelper.standard.rice
-        let nickName = UserDefaultsHelper.standard.nickname
-        
-        riceCount += getTextFieldValue(textField: riceTextField)
-        UserDefaultsHelper.standard.rice = riceCount
-        
-        setUpMessage(nickname: nickName)
-        setUpTamagotchiLabel()
-        setUpTamagotchi()
+        eatButtonCountUp(sender: sender)
     }
     
     @IBAction func waterButtonTapped(_ sender: UIButton) {
-        var waterCount = UserDefaultsHelper.standard.water
+        eatButtonCountUp(sender: sender)
+    }
+    
+    @IBAction func tapGustureKeyboadDown(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    
+    func eatButtonCountUp(sender: UIButton){
+        if sender.tag == 0{
+            var riceCount = UserDefaultsHelper.standard.rice
+            riceCount += getTextFieldValue(textField: riceTextField)
+            UserDefaultsHelper.standard.rice = riceCount
+        }else{
+            var waterCount = UserDefaultsHelper.standard.water
+            waterCount += getTextFieldValue(textField: waterTextField)
+            UserDefaultsHelper.standard.water = waterCount
+        }
         let nickName = UserDefaultsHelper.standard.nickname
-        
-        waterCount += getTextFieldValue(textField: waterTextField)
-        UserDefaultsHelper.standard.water = waterCount
-        
         setUpMessage(nickname: nickName)
-        setUpTamagotchiLabel()
         setUpTamagotchi()
     }
+    
+    
+    
     
     func getTextFieldValue(textField: UITextField) -> Int {
         guard let text = textField.text, !text.isEmpty else { return 1 }
@@ -135,31 +141,29 @@ extension MainViewController{
         let waterCount = UserDefaultsHelper.standard.water
         let tamagotchiType = Tamagotchi.getType(name: tamagotchiName)
         var level = Tamagotchi.getLevel(rice: riceCount, water: waterCount)
-        level = level >= 10 ? 9 : level
         
+        // 이름
         tamagotchiNameLabel.text = tamagotchiName
         tamagotchiNameLabel.setNameLabel()
-        tamagotchiImageView.image = UIImage(named: "\(tamagotchiType.rawValue)-\(level)")
-    }
-    
-    func setUpTamagotchiLabel(){
-        let riceCount = UserDefaultsHelper.standard.rice
-        let waterCount = UserDefaultsHelper.standard.water
-        let level = Tamagotchi.getLevel(rice: riceCount, water: waterCount)
-        
-        
+        // 레벨 밥,물 등 정보
         tamagotchiLevelLabel.text = "LV\(level)"
         tamagotchiLevelLabel.setInfoLabel()
         tamagotchiRiceLabel.text = "밥알\(riceCount)개"
         tamagotchiRiceLabel.setInfoLabel()
         tamagotchiWaterLabel.text = "물방울 \(waterCount)개"
         tamagotchiWaterLabel.setInfoLabel()
-        
+        // 이미지
+        level = level >= 10 ? 9 : level
+        tamagotchiImageView.image = UIImage(named: "\(tamagotchiType.rawValue)-\(level)")
     }
     
+    
     func setUpButton(){
-        waterButton.eatButtonDesing(title: "물먹기", systemImage: "leaf.circle")
-        riceButton.eatButtonDesing(title: "밥먹기", systemImage: "drop.circle")
+        riceButton.eatButtonDesing(title: "밥먹기", systemImage: "leaf.circle")
+        riceButton.tag = 0
+        waterButton.eatButtonDesing(title: "물먹기", systemImage: "drop.circle")
+        waterButton.tag = 1
+        
     }
     
     func setUpTalk(){
