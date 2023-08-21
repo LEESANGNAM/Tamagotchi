@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D616245C2A9386FF004CE7EB /* ReusableIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616245B2A9386FF004CE7EB /* ReusableIdentifierProtocol.swift */; };
+		D616245F2A93CE4A004CE7EB /* WaterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D616245E2A93CE4A004CE7EB /* WaterButton.swift */; };
+		D61624612A93CE53004CE7EB /* RiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61624602A93CE53004CE7EB /* RiceButton.swift */; };
 		D67320942A7D5C1D00916497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67320932A7D5C1D00916497 /* Main.storyboard */; };
 		D67320962A7D5CA300916497 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67320952A7D5CA300916497 /* Tamagotchi.swift */; };
 		D67320992A7D72CD00916497 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67320982A7D72CD00916497 /* Detail.storyboard */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		D616245B2A9386FF004CE7EB /* ReusableIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifierProtocol.swift; sourceTree = "<group>"; };
+		D616245E2A93CE4A004CE7EB /* WaterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterButton.swift; sourceTree = "<group>"; };
+		D61624602A93CE53004CE7EB /* RiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiceButton.swift; sourceTree = "<group>"; };
 		D67320932A7D5C1D00916497 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D67320952A7D5CA300916497 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 		D67320982A7D72CD00916497 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -79,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D616245D2A93CE0A004CE7EB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D616245E2A93CE4A004CE7EB /* WaterButton.swift */,
+				D61624602A93CE53004CE7EB /* RiceButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		D67320972A7D72B100916497 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +142,7 @@
 		D698B6162A7D1EFF00ED3D28 /* Tamagotchi */ = {
 			isa = PBXGroup;
 			children = (
+				D616245D2A93CE0A004CE7EB /* Buttons */,
 				D673209F2A7E2ABE00916497 /* Extension */,
 				D6B63E072A7EB06A006377A1 /* Setting */,
 				D673209C2A7E012F00916497 /* Main */,
@@ -257,8 +271,10 @@
 				D698B62E2A7D49D200ED3D28 /* TamagotchiCollectionViewCell.swift in Sources */,
 				D698B6182A7D1EFF00ED3D28 /* AppDelegate.swift in Sources */,
 				D6B63E132A7F55CD006377A1 /* SettingNameViewController.swift in Sources */,
+				D616245F2A93CE4A004CE7EB /* WaterButton.swift in Sources */,
 				D673209B2A7D72E300916497 /* DetailViewController.swift in Sources */,
 				D6B63E002A7E3D92006377A1 /* Extension+UILabel.swift in Sources */,
+				D61624612A93CE53004CE7EB /* RiceButton.swift in Sources */,
 				D67320A12A7E2AD600916497 /* Extension+UIButton.swift in Sources */,
 				D6B63E112A7EB58B006377A1 /* SettingEnum.swift in Sources */,
 				D698B61A2A7D1EFF00ED3D28 /* SceneDelegate.swift in Sources */,
