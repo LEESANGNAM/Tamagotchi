@@ -63,7 +63,11 @@ struct Tamagotchi {
         return type.name
     }
     static func getLevel(rice: Int, water: Int) -> Int{
-       let level = ((rice / 5) + (water / 2)) / 10
+        let divRice = Double(rice) / 5
+        let divWater = Double(water) / 2
+        let sumDivValue = divRice + divWater
+        print(sumDivValue)
+        let level =  Int(sumDivValue / 10)
         if level <= 1{
             return 1
         }else if level >= 10 {
