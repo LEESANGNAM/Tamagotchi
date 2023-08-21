@@ -22,7 +22,7 @@ class SettingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        settingTableView.reloadData()
+        settingTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
     
     func setUpNavigationBar(){
