@@ -78,7 +78,7 @@ class DetailViewController: UIViewController {
         setData(tamagotchi: tamagotchiDetail)
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
         let nav = UINavigationController(rootViewController: vc)
         sceneDelegate?.window?.rootViewController = nav
         sceneDelegate?.window?.makeKeyAndVisible()

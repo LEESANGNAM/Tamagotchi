@@ -71,7 +71,7 @@ extension SelectViewController : UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = TamagotchiSelectCollectionView.dequeueReusableCell(withReuseIdentifier: "TamagotchiCollectionViewCell", for: indexPath) as! TamagotchiCollectionViewCell
+        let cell = TamagotchiSelectCollectionView.dequeueReusableCell(withReuseIdentifier: TamagotchiCollectionViewCell.identifier, for: indexPath) as! TamagotchiCollectionViewCell
         
         cell.TamagotchiIamageView.image = tamagotchi[indexPath.row].type.image
         cell.TamagotchiNameLabel.text = tamagotchi[indexPath.row].name
@@ -82,7 +82,7 @@ extension SelectViewController : UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Detail", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
         
         vc.tamagotchiDetail = tamagotchi[indexPath.row]
         vc.modalPresentationStyle = .overFullScreen
@@ -93,8 +93,8 @@ extension SelectViewController : UICollectionViewDataSource, UICollectionViewDel
     
     
     func findCell(){
-        let nib = UINib(nibName: "TamagotchiCollectionViewCell", bundle: nil)
-        TamagotchiSelectCollectionView.register(nib, forCellWithReuseIdentifier: "TamagotchiCollectionViewCell")
+        let nib = UINib(nibName: TamagotchiCollectionViewCell.identifier, bundle: nil)
+        TamagotchiSelectCollectionView.register(nib, forCellWithReuseIdentifier: TamagotchiCollectionViewCell.identifier)
     }
 
     func setCollectionView(){

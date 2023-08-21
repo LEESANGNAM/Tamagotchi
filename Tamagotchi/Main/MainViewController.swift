@@ -128,7 +128,7 @@ extension MainViewController{
     }
     @objc func setting(){
         let sb = UIStoryboard(name: "Setting", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "SettingViewController") as? SettingViewController else { return }
+        guard let vc = sb.instantiateViewController(withIdentifier: SettingViewController.identifier) as? SettingViewController else { return }
         
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -46,7 +46,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = settingTableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell") as! SettingTableViewCell
+        let cell = settingTableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier) as! SettingTableViewCell
         
         cell.setTableViewCell(settingCase: settingCase[indexPath.row])
         
@@ -57,12 +57,12 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
             print("이름변경창!")
-            guard let vc = storyboard?.instantiateViewController(withIdentifier: "SettingNameViewController") as? SettingNameViewController else { return }
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: SettingNameViewController.identifier) as? SettingNameViewController else { return }
             navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 1 {
             print("다마고치변경!")
             let sb = UIStoryboard(name: "Select", bundle: nil)
-            guard let vc = sb.instantiateViewController(withIdentifier: "SelectViewController") as? SelectViewController else { return }
+            guard let vc = sb.instantiateViewController(withIdentifier: SelectViewController.identifier) as? SelectViewController else { return }
             navigationController?.pushViewController(vc, animated: true)
         }else {
             print("초기화")
@@ -84,7 +84,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
         
         let sb = UIStoryboard(name: "Select", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "SelectViewController") as? SelectViewController else { return }
+        guard let vc = sb.instantiateViewController(withIdentifier: SelectViewController.identifier) as? SelectViewController else { return }
         let nav = UINavigationController(rootViewController: vc)
         sceneDelegate?.window?.rootViewController = nav
         sceneDelegate?.window?.makeKeyAndVisible()
@@ -92,8 +92,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
     
     
     func findCell(){
-        let nib = UINib(nibName: "SettingTableViewCell", bundle: nil)
-        settingTableView.register(nib, forCellReuseIdentifier: "SettingTableViewCell")
+        let nib = UINib(nibName: SettingTableViewCell.identifier, bundle: nil)
+        settingTableView.register(nib, forCellReuseIdentifier: SettingTableViewCell.identifier)
     }
 
     func setTableView(){
