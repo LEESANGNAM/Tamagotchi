@@ -59,8 +59,12 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func selectButtonTapped(_ sender: UIButton) {
+        let tamagochName = UserDefaultsHelper.standard.name
         if case .none = tamagotchiDetail.type{  print("\(tamagotchiDetail.type)")
             showAlert(text: "준비중입니다.")
+            return
+        }else if !tamagochName.isEmpty, tamagochName == tamagotchiDetail.name {
+            showAlert(text: "이미키우고있는 다마고치입니다.")
             return
         }
         changeRootView()
